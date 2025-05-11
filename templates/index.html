@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translation Headphones</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        /* Menu */
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Image gallery */
+        .gallery {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 250px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* Product description */
+        .product-description {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .product-description h2 {
+            font-size: 28px;
+            color: #333;
+        }
+
+        .product-description p {
+            font-size: 16px;
+            color: #555;
+            margin-top: 10px;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Warranty section */
+        .warranty {
+            text-align: center;
+            background-color: #007BFF;
+            color: white;
+            padding: 30px 0;
+        }
+
+        .warranty h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .warranty p {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        /* Form */
+        .order-form {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-form label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        .order-form input, .order-form select, .order-form button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .order-form button {
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .order-form button:hover {
+            background-color: #218838;
+        }
+/* Image gallery */
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+}
+
+.gallery img {
+    width: 250px; /* Cố định chiều rộng */
+    height: 150px; /* Cố định chiều cao */
+    object-fit: contain; /* Đảm bảo hình ảnh không bị cắt xén và giữ nguyên tỷ lệ */
+    border-radius: 8px;
+}
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+/* Menu */
+header {
+    background-color: #343a40;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Image gallery */
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+}
+
+.gallery img {
+    width: 100%; /* Full width on smaller screens */
+    max-width: 250px; /* Max width for larger screens */
+    height: 150px;
+    object-fit: contain; /* Ensures images are not cut off */
+    border-radius: 8px;
+}
+
+/* Product description */
+.product-description {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.product-description h2 {
+    font-size: 28px;
+    color: #333;
+}
+
+.product-description p {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Warranty section */
+.warranty {
+    text-align: center;
+    background-color: #007BFF;
+    color: white;
+    padding: 30px 0;
+}
+
+.warranty h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.warranty p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Form */
+.order-form {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.order-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.order-form input, .order-form select, .order-form button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.order-form button {
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.order-form button:hover {
+    background-color: #218838;
+}
+
+/* Footer */
+footer {
+   background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    position: relative; /* Change to relative */
+    width: 100%;
+    bottom: 0;
+    margin-top: 20px; /* Add margin top to avoid overlap */
+}
+ .reviews-section {
+        width: 100%;
+        max-width: 800px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .reviews-section h2 {
+        font-size: 28px;
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* Review Item */
+    .review {
+        border-bottom: 1px solid #e5e5e5;
+        padding: 10px 0;
+        margin-bottom: 15px;
+    }
+
+    .review:last-child {
+        border-bottom: none;
+    }
+
+    .stars {
+        color: #FFD700; /* Gold color for stars */
+        font-size: 20px;
+    }
+
+    .review p {
+        font-size: 16px;
+        color: #555;
+        margin-top: 10px;
+        line-height: 1.5;
+    }
+
+    .reviewer {
+        font-size: 14px;
+        color: #888;
+        margin-top: 5px;
+    }
+
+    /* Hidden reviews */
+    .hidden-reviews {
+        display: none;
+    }
+
+    /* Button */
+    #show-more-btn {
+        width: 100%;
+        padding: 10px;
+        background-color: #3498db;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+    }
+
+    #show-more-btn:hover {
+        background-color: #2980b9;
+    }
+
+    /* Mobile Responsive */
+    @media screen and (max-width: 768px) {
+        .reviews-section {
+            padding: 15px;
+            width: 90%;
+        }
+
+        .review p {
+            font-size: 14px; /* Adjust font size on smaller screens */
+        }
+
+        .stars {
+            font-size: 18px; /* Adjust star size */
+        }
+
+        #show-more-btn {
+            font-size: 14px; /* Adjust button font size */
+            padding: 12px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .reviews-section {
+            padding: 10px;
+        }
+
+        .stars {
+            font-size: 16px; /* Smaller star size */
+        }
+
+        .review p {
+            font-size: 13px; /* Smaller text size */
+        }
+
+        #show-more-btn {
+            font-size: 12px; /* Smaller button text */
+            padding: 10px;
+        }
+    }
+        /* Floating Cart Button */
+/* Floating Cart Button */
+.floating-cart {
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px;  /* Distance from the right */
+    background-color: #ff8c00; /* Shopee's brand color */
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+/* Cart icon inside the button */
+#cart-icon {
+    font-size: 28px; /* Size of the cart icon */
+    margin-right: 8px; /* Space between icon and count */
+}
+
+/* Cart count (number of items) */
+#cart-count {
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+    min-width: 20px;
+    text-align: center;
+}
+
+/* Hover effect for the cart button */
+.floating-cart:hover {
+    background-color: #ff7000; /* Darker shade of Shopee's color */
+    transform: scale(1.1);
+}
+
+/* Add smooth animation when opening the cart */
+@keyframes cartPop {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+.floating-cart {
+    animation: cartPop 0.5s ease-out;
+}
+
+
+
+/* Media Queries for mobile responsiveness */
+@media screen and (max-width: 768px) {
+    header {
+        font-size: 20px; /* Smaller font size on mobile */
+    }
+
+    .gallery {
+        flex-direction: column; /* Stack images vertically on small screens */
+        align-items: center;
+    }
+
+    .gallery img {
+        max-width: 100%; /* Make images responsive */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .product-description h2 {
+        font-size: 24px; /* Smaller heading on mobile */
+    }
+
+    .product-description p {
+        font-size: 14px; /* Smaller text on mobile */
+        margin: 20px;
+    }
+
+    .order-form {
+        padding: 15px; /* Reduce padding on mobile */
+    }
+
+    footer {
+        font-size: 12px; /* Smaller footer text on mobile */
+    }
+}
+
+.gallery img {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    max-width: 250px;
+    height: 150px;
+    object-fit: contain;
+    object-position: center; /* Đảm bảo hình ảnh được căn giữa */
+    border-radius: 8px;
+}
+/* Image Gallery */
+
+
+.gallery img {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    max-width: 100%; /* Giới hạn tối đa */
+    height: auto; /* Giữ tỷ lệ hình ảnh */
+    object-fit: cover; /* Đảm bảo hình ảnh không bị vỡ hoặc méo */
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out; /* Hiệu ứng zoom */
+}
+
+.gallery img:hover {
+    transform: scale(1.05); /* Tăng kích thước khi hover */
+}
+
+/* Media Queries for mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .gallery img {
+        width: 100%; /* Chiếm toàn bộ chiều rộng màn hình trên mobile */
+        height: auto; /* Giữ tỷ lệ ảnh */
+        object-fit: cover; /* Đảm bảo ảnh chiếm đầy không gian mà không bị méo */
+    }
+}
+
+        /* Footer */
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        /* Container chứa video */
+.video-container {
+    text-align: center;
+    margin: 20px;
+}
+
+/* Đảm bảo video có độ rộng 100% */
+.responsive-video {
+    max-width: 100%; /* Chiếm toàn bộ chiều rộng */
+    height: auto; /* Tự động điều chỉnh chiều cao */
+    border-radius: 8px; /* Làm tròn các góc của video */
+}
+
+/* Media Queries cho thiết bị di động */
+@media screen and (max-width: 768px) {
+    .video-container h2 {
+        font-size: 22px; /* Font size nhỏ hơn trên di động */
+    }
+
+    .responsive-video {
+        width: 100%; /* Đảm bảo video chiếm toàn bộ chiều rộng màn hình trên di động */
+        height: 200px; /* Cố định chiều cao video */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .responsive-video {
+        height: 180px; /* Cố định chiều cao nhỏ hơn cho các màn hình nhỏ */
+    }
+}
+
+    </style>
+        <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Price Section */
+        .price-section {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .price-section h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .price-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+            flex-wrap: wrap; /* Ensures the content is responsive */
+        }
+
+        .price-details span {
+            font-weight: bold;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        .sale-price {
+            color: #e74c3c;
+            font-size: 24px;
+        }
+
+        .discount {
+            color: #27ae60;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .dynamic-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            flex-wrap: wrap; /* Ensures the content is responsive */
+        }
+
+        .dynamic-info span {
+            font-weight: bold;
+            width: 45%; /* Ensures each span takes half of the space */
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .counter {
+            font-size: 20px;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .percentage {
+            color: #e67e22;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        /* Media Queries for mobile responsiveness */
+        @media screen and (max-width: 768px) {
+            .price-details {
+                font-size: 16px; /* Smaller text on mobile */
+                flex-direction: column; /* Stack the price details vertically */
+                align-items: center;
+            }
+
+            .price-details .sale-price {
+                font-size: 30px; /* Larger sale price on mobile */
+            }
+
+            .discount {
+                font-size: 18px;
+            }
+
+            .dynamic-info {
+                font-size: 14px; /* Smaller text on mobile */
+            }
+
+            .dynamic-info span {
+                width: 100%; /* Make the info take full width on mobile */
+                text-align: center;
+            }
+
+            .price-section h2 {
+                font-size: 24px; /* Smaller heading on mobile */
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .price-section {
+                padding: 15px; /* Reduce padding on small screens */
+                margin: 10px; /* Adjust margin for small screens */
+            }
+
+            .price-details .sale-price {
+                font-size: 26px; /* Smaller sale price on very small screens */
+            }
+
+            .counter {
+                font-size: 18px; /* Adjust counter font size */
+            }
+        }
+          .product-intro, .warranty-info {
+        max-width: 800px; /* Limit width for better readability */
+        margin: 0 auto; /* Center the content */
+        padding: 20px; /* Add padding around content */
+        text-align: left; /* Align text to the left */
+    }
+
+    .product-intro h2, .warranty-info h2 {
+        text-align: center; /* Center the headers */
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .product-intro p, .warranty-info p {
+        line-height: 1.6; /* Improve readability with spacing between lines */
+        font-size: 16px;
+    }
+
+    /* Optional: Style the strong text */
+    .product-intro strong, .warranty-info strong {
+        color: #e74c3c; /* Red color to highlight important text */
+        font-weight: bold;
+    }
+    </style>
+
+</head>
+<body>
+
+    <!-- Menu -->
+    <header>
+        Translation Headphones
+    </header>
+
+
+
+
+    <!-- Image Gallery -->
+    <div class="gallery">
+
+        <img src="https://m.media-amazon.com/images/I/715YFrLhcWL._AC_SY355_.jpg" alt="Headphones 2">
+         <!-- Price Section -->
+   <div class="price-section">
+        <h2>Translation Headphones</h2>
+
+        <div class="price-details">
+            <div class="price">
+                <span class="original-price">2.150.000 VNĐ</span>
+                <span class="sale-price">990.000 VNĐ</span>
+            </div>
+            <div class="discount">
+                <span id="discount-percent">-50%</span>
+            </div>
+        </div>
+
+        <div class="dynamic-info">
+            <div>
+                <span>People who have purchased:</span>
+                <span class="counter" id="purchased-counter">4816</span>
+            </div>
+            <div>
+                <span>People currently purchasing:</span>
+                <span class="counter" id="current-purchasing-counter">26</span>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="gallery">
+        <img src="https://m.media-amazon.com/images/I/51Kskd9Vz4L._AC_SY355_.jpg" alt="Headphones 1">
+    </div>
+    <div class="gallery">
+        <img src="https://m.media-amazon.com/images/I/71n8bNCL0iL._AC_SY355_.jpg" alt="Headphones 3">
+    </div>
+      <!-- Product Description -->
+    <div class="product-description">
+        <h2>High-Quality Translation Headphones</h2>
+        <p>
+        🔥 <strong>Smart Translation Headphones PRO</strong> – 50% OFF!<br>
+        Just <strong>990,000 VND</strong> for 1 set, <strong>1,750,000 VND</strong> for 2 sets (Free shipping).<br><br>
+
+        🎧 <strong>ERAZER AI Headphones</strong> – The ultimate solution for foreigners in Vietnam.<br>
+        Easily communicate with real-time AI translation in 135+ languages, including Vietnamese, English, Chinese, Japanese, Korean, German, French, and more.<br>
+        Learn languages, communicate at hospitals, banks, or simply ask for directions with ease!<br><br>
+
+        ✅ <strong>Comfortable ergonomic design</strong> and <strong>crystal-clear sound</strong>.<br>
+        🎁 <strong>Lifetime free app</strong> – no extra fees or subscriptions!
+    </p>
+        <div class="video-container">
+    <h2>Watch Our Product Video DEMO VIETNAMESE TO SPANISH</h2>
+   <video class="responsive-video" controls>
+    <source src="{{ url_for('static', filename='video/VNTOTBN.mp4') }}" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+</div>
+    <div class="video-container">
+         <video class="responsive-video" controls>
+    <source src="{{ url_for('static', filename='video/TBNTOVN.mp4') }}" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+    </div>
+    </div>
+    <div class="gallery">
+        <img src="https://m.media-amazon.com/images/I/61RKx-24K2L._AC_SL1200_.jpg" alt="Headphones 4">
+    </div>
+    <div class="gallery">
+        <img src="https://m.media-amazon.com/images/I/715BRy64gmL._AC_SL1200_.jpg" alt="Headphones 5">
+    </div>
+
+
+
+    <!-- Warranty -->
+    <div class="warranty">
+        <h3>Product Warranty</h3>
+       <p>
+        ✅ <strong>24-month warranty</strong>.<br>
+        ✅ <strong>1-to-1 exchange within 15 days</strong> for any defects.<br>
+        ✅ <strong>Check the product before payment</strong> (Cash on Delivery available).<br><br>
+        <strong>Order now to experience the convenience!</strong>
+    </p>
+    </div>
+
+    <!-- Order Form -->
+    <div class="order-form">
+
+        <div class="price-details">
+            <div class="price">
+                <h2>🔥Smart Translation Headphones PRO</h2>
+                <span class="original-price">2.150.000 VNĐ</span><br>
+                <span class="sale-price">Price : 990,000 VNĐ </span><br>
+                <span class="sale-price">Price : 1,750,000 VND for 2 sets (Free shipping) </span>
+            </div>
+
+        </div>
+    <h2>Place Your Order</h2>
+    <form action="#" method="POST">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="phone">Phone Number (Vietnam):</label>
+        <input type="tel" id="phone" name="phone" pattern="^\+84[3-9][0-9]{8}$" required
+               placeholder="Example: +84123456789"><br>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required><br>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" required><br>
+
+        <label for="notes">Notes (Preferred delivery time):</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="Please specify your preferred delivery time" required></textarea><br>
+
+        <button type="submit">Place Order</button>
+    </form>
+</div>
+
+    <div class="reviews-section">
+    <h2>Customer Reviews</h2>
+
+    <!-- Display first 5 reviews -->
+    <div class="reviews-list">
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>"The product is amazing! Great quality and fast delivery. Will definitely buy again!"</p>
+            <span class="reviewer">John Doe</span>
+        </div>
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>"Perfect product, exactly as described. Excellent customer service and very fast shipping!"</p>
+            <span class="reviewer">Jane Smith</span>
+        </div>
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>"Amazing experience! The product works great and delivery was super fast."</p>
+            <span class="reviewer">Alex Lee</span>
+        </div>
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>"Wonderful product! It exceeds my expectations. Fast delivery too!"</p>
+            <span class="reviewer">Maria Garcia</span>
+        </div>
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>"Best purchase I’ve made. High quality, easy to use, and super fast shipping!"</p>
+            <span class="reviewer">David Kim</span>
+        </div>
+    </div>
+
+    <!-- Hidden Reviews -->
+    <div class="hidden-reviews">
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>"Great product, the translation feature works perfectly!"</p>
+            <span class="reviewer">Emily Clark</span>
+        </div>
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>"Excellent product, I am very satisfied with the purchase!"</p>
+            <span class="reviewer">James Brown</span>
+        </div>
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>"Highly recommend! Product is top-notch and customer support was great!"</p>
+            <span class="reviewer">Sophia Wong</span>
+        </div>
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>"Amazing quality and performance! Will definitely come back for more!"</p>
+            <span class="reviewer">Chris Walker</span>
+        </div>
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>"Very pleased with my purchase! The product is fantastic!"</p>
+            <span class="reviewer">Linda Harris</span>
+        </div>
+        <!-- 15 more hidden reviews here -->
+    </div>
+
+    <!-- Button to toggle more reviews -->
+    <button id="show-more-btn" onclick="toggleReviews()">Show 20 More Reviews</button>
+</div>
+
+
+
+
+
+<div id="cart-btn" class="floating-cart" onclick="scrollToOrderForm()">
+    <span id="cart-icon" class="material-icons">🛒</span>
+</div>
+
+    <!-- Footer -->
+
+
+
+ <script>
+// Function to scroll to the order form section when the floating cart is clicked
+function scrollToOrderForm() {
+    document.querySelector('.order-form').scrollIntoView({ behavior: 'smooth' });
+}
+
+// Function to simulate dynamic updates for cart count
+function updateCartCount(count) {
+    document.getElementById('cart-count').textContent = count;
+}
+
+// Example of updating the cart count (e.g., 3 items in the cart)
+updateCartCount(3);
+
+
+        // Simulate the dynamic update of purchased and purchasing counters
+        let purchasedCounter = 4816;
+        let purchasingCounter = 26;
+
+        // Function to simulate changes over time
+        setInterval(() => {
+            // Increase the number of purchased products and people currently purchasing
+            purchasedCounter += Math.floor(Math.random() * 5);  // Randomly add 0-4 people who purchased
+            purchasingCounter += Math.floor(Math.random() * 3); // Randomly add 0-2 people currently purchasing
+
+            // Update the HTML elements with the new values
+            document.getElementById('purchased-counter').textContent = purchasedCounter;
+            document.getElementById('current-purchasing-counter').textContent = purchasingCounter;
+        }, 3000); // Update every 3 seconds
+
+
+        document.getElementById('discount-percent').textContent = `-${discount.toFixed(0)}%`;
+    </script>
+<script>
+    function toggleReviews() {
+        var hiddenReviews = document.querySelector('.hidden-reviews');
+        var showMoreBtn = document.getElementById('show-more-btn');
+
+        // Toggle the visibility of hidden reviews
+        if (hiddenReviews.style.display === 'none' || hiddenReviews.style.display === '') {
+            hiddenReviews.style.display = 'block';
+            showMoreBtn.textContent = 'Show Less Reviews';
+        } else {
+            hiddenReviews.style.display = 'none';
+            showMoreBtn.textContent = 'Show 20 More Reviews';
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Your Order</title>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 8px;
+            display: block;
+        }
+        input[type="text"], input[type="email"], input[type="number"], select {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .message {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 16px;
+            color: #28a745;
+        }
+        .error {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Place Your Order</h2>
+        <form id="order-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="product">Product:</label>
+            <select id="product" name="product" required>
+                <option value="Product 1">Product 1</option>
+                <option value="Product 2">Product 2</option>
+                <option value="Product 3">Product 3</option>
+            </select><br>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" required><br>
+
+            <button type="submit">Place Order</button>
+        </form>
+        <div id="response-message"></div>
+    </div>
+
+    <script>
+        // Initialize EmailJS with your user ID
+        emailjs.init("YOUR_USER_ID");  // Replace YOUR_USER_ID with your EmailJS user ID
+
+        // Listen for form submission
+        document.getElementById("order-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission (page reload)
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const product = document.getElementById("product").value;
+            const quantity = document.getElementById("quantity").value;
+
+            const orderInfo = {
+                name: name,
+                email: email,
+                product: product,
+                quantity: quantity
+            };
+
+            // Send email via EmailJS
+            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", orderInfo)  // Replace YOUR_SERVICE_ID and YOUR_TEMPLATE_ID with your actual EmailJS info
+                .then(function(response) {
+                    // Show success message when the email is sent successfully
+                    document.getElementById("response-message").innerHTML = "<p class='message'>Order placed successfully! We will contact you shortly.</p>";
+                }, function(error) {
+                    // Show error message if there is an issue with sending the email
+                    document.getElementById("response-message").innerHTML = "<p class='error'>An error occurred. Please try again later.</p>";
+                });
+        });
+    </script>
+</body>
+</html>
