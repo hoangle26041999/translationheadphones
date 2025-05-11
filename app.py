@@ -22,7 +22,7 @@ def index():
 
         # Gửi email thông báo
         send_email(name, phone, address, quantity, notes)
-        return render_template("success.html")
+        return render_template("success.html",name=name, phone=phone, address=address, quantity=quantity, notes=notes)
 
     return render_template("index.html")
 

@@ -3,10 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Placed</title>
+    <title>Thank You</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .thank-you-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .thank-you-container h2 {
+            color: #28a745;
+        }
+        .thank-you-container p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .thank-you-container .highlight {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .thank-you-container .footer {
+            margin-top: 30px;
+            color: #888;
+            font-size: 14px;
+        }
+        .thank-you-container button {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .thank-you-container button:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
 <body>
-    <h2>Order placed successfully!</h2>
-    <p>We will contact you shortly.</p>
+
+    <div class="thank-you-container">
+        <h2>Thank you, {{ name }}!</h2>
+        <p>We have received your order with the following details:</p>
+
+        <p><span class="highlight">Full Name:</span> {{ name }}</p>
+        <p><span class="highlight">Phone Number:</span> {{ phone }}</p>
+        <p><span class="highlight">Address:</span> {{ address }}</p>
+        <p><span class="highlight">Quantity:</span> {{ quantity }}</p>
+        <p><span class="highlight">Notes:</span> {{ notes }}</p>
+
+        <p>We will contact you shortly to confirm your order.</p>
+
+        <div class="footer">
+            <p>Have a wonderful day!</p>
+            <button onclick="window.location.href='/'">Go Back to Home</button>
+        </div>
+    </div>
+
 </body>
 </html>
